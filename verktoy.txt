@@ -1,0 +1,66 @@
+"Operation" here refers to one of the HTTP "methods".
+
+One of:
+
+POST
+GET
+PUT
+DELETE
+
+
+...and the more exotic ones:
+
+OPTIONS
+HEAD
+PATCH
+TRACE
+In the HTTP protocol, you can communicate to each path using one (or more) of these "methods".
+
+When building APIs, you normally use these specific HTTP methods to perform a specific action.
+
+Normally you use:
+
+POST: to create data.
+GET: to read data.
+PUT: to update data.
+DELETE: to delete data.
+
+
+
+
+
+
+
+
+
+
+
+
+
+You can also use the other operations:
+
+@app.post()
+@app.put()
+@app.delete()
+And the more exotic ones:
+
+@app.options()
+@app.head()
+@app.patch()
+@app.trace()
+
+
+
+
+
+
+
+
+
+
+Recap
+Import FastAPI.
+Create an app instance.
+Write a path operation decorator (like @app.get("/")).
+Write a path operation function (like def root(): ... above).
+Run the development server (like uvicorn main:app --reload).
