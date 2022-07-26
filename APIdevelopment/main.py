@@ -1,12 +1,8 @@
+from enum import Enum
 
 from fastapi import FastAPI
 from fastapi.params import Body
 from pydantic import BaseModel
-
-
-
-
-
 
 app = FastAPI()
 
@@ -90,11 +86,6 @@ async def raed_item_id(item_id : int):
 
 #b3 = Student("Mwamuzi", "Shadrick", "3DD", 24, "NORGE")
 
-
-
-
-
-
 def get_items(item_a: str, item_b: int, item_c: float, item_d: bool, item_e: bytes):
     return item_a, item_b, item_c, item_d, item_d, item_e
 
@@ -104,17 +95,50 @@ def get_items(item_a: str, item_b: int, item_c: float, item_d: bool, item_e: byt
 
 message = b1.get_successfull_message("CREATING THE POST HAVE BEEN DONE....")
 
-
-@portfolio.post("/createpost")
+""" """
+@portfolio.post("/createposter")
 def post_create_aSuccessfull_message(OsloTrip: dict = Body(...)):
     print(OsloTrip)
     context = {
-        'new_post_message' : f"Title {OsloTrip['Title']}", 
+        'new_post_message' : f"Title: {OsloTrip['Title']}", 
         'Content' : f"Content {OsloTrip['Content']}", 
-        'User' : f"{OsloTrip['User']}",
+        'User' : f"{OsloTrip['Username']}",
+        'Age' : f"{OsloTrip['Age']}",
         'Saldo' : f"{OsloTrip['Saldo']}",
         'Message' : message
     }
+    return context
+
+
+@portfolio.post("/createposters")
+def post_create_Successfull_message(OsloTrip : dict = Body(...)):
+    print(OsloTrip)
+    context = {
+        'new_post_message' : f"Title: {OsloTrip['Title']}", 
+        'Content' : f"Content {OsloTrip['Content']}", 
+        'User' : f"{OsloTrip['Username']}",
+        'Saldo' : f"{OsloTrip['Saldo']}",
+        'Age' : f"{OsloTrip['Age']}",
+        'Message' : message
+    }
+    return context
+
+
+class Post(BaseModel):
+    Title : str
+    Content : str
+    Username = str
+    Age = int
+    Saldo = float
+       
+new_posting_message = b1.get_successfull_message("We are creating the new post from BaseModel pydantic")    
+@portfolio.post("/postmodels")
+def post_creating_Successfull_message(new_user : Post):
+    print(new_user)
+    context = {
+        "data" : "New Post",
+        "new_post" : new_user
+        }
     return context
 
 
@@ -125,7 +149,12 @@ def post_create_aSuccessfull_message(OsloTrip: dict = Body(...)):
 
 
 
-from enum import Enum
+
+
+
+
+
+
 class ModelName(str, Enum):
     alexnet = "alexnet"
     resnet = "resnet"
