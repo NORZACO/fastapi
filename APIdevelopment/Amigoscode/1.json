@@ -1,0 +1,38 @@
+{
+    "databases": [
+        {
+            "id": "c936f584-e1e0-4d7b-93e9-99b16e28908c",
+            "First_name": "Etienne",
+            "Last_name": "Shadrick",
+            "Middle_name": "Kyamata",
+            "age": 10,
+            "gender": "male",
+            "roles": [
+                "admin",
+                "user"
+            ]
+        },
+        {
+            "id": "a8f0d48a-fbd6-4ab1-9f31-284f0976ec22",
+            "First_name": "Elizabeth",
+            "Last_name": "Thorsen",
+            "Middle_name": "Hika",
+            "age": 10,
+            "gender": "female",
+            "roles": [
+                "student"
+            ]
+        },
+        {
+            "id": "a8f0d48a-fbd6-4ab1-9f31-284f0976ec22",
+            "First_name": "Elizabeth",
+            "Last_name": "Thorsen",
+            "Middle_name": "Hika",
+            "age": 10,
+            "gender": "female",
+            "roles": [
+                "student"
+            ]
+        }
+    ]
+}
